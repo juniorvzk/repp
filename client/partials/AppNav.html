@@ -1,8 +1,107 @@
 <template name="AppNav">
-    <div class="app-nav">
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <!-- <div class="app-nav">
         <ul>
             <li><a href="/"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li><a href="/"><i class="fa fa-users"></i> <span>Users Management</span></a></li>
         </ul>
+    </div> -->
+
+    <!-- Overlay for fixed sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-default open" role="navigation">
+    <!-- Sidebar header -->
+    <div class="sidebar-header header-cover" style="background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
+        <!-- Top bar -->
+        <div class="top-bar"></div>
+        <!-- Sidebar toggle button -->
+        <button type="button" class="sidebar-toggle">
+            <i class="icon-material-sidebar-arrow"></i>
+        </button>
+        <!-- Sidebar brand image -->
+        <div class="sidebar-image">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg">
+        </div>
+        <!-- Sidebar brand name -->
+        <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+            {{getEmail}}
+            <b class="caret"></b>
+        </a>
     </div>
+
+    <!-- Sidebar navigation -->
+    <ul class="nav sidebar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-files-o"> </i> Fiscal <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+        <ul class="dropdown-menu forAnimate" role="menu">
+          <li><a href="/emitir"> Emitir</a></li>
+          <li><a href="/tributos"> Tributos</a></li>
+          <!-- <li><a href="/pedidos"> Pedidos</a></li> -->
+          <!-- <li class="divider"></li> -->
+          <!-- <li><a href="#">Separated link</a></li> -->
+          <!-- <li class="divider"></li> -->
+          <!-- <li><a href="#">Informes</a></li> -->
+        </ul>
+      </li>
+
+        <li>
+          <a href="/financeiro"><i class="fa fa-money"> Financeiro </i></a>
+        </li>
+        <li>
+          <a href="/contabil"><i class="fa fa-balance-scale"> Contábil </i></a>
+        </li>
+        <li>
+          <a href="/manufatura"><i class="fa fa-home"> Manufatura </i></a>
+        </li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-files-o"> </i> Suprimentos <i class="fa fa-caret-down"></i> </a>
+        <ul class="dropdown-menu forAnimate" role="menu">
+          <li><a href="/transporte"> Transporte</a></li>
+          <!-- <li><a href="/tributos"> Tributos</a></li> -->
+          <!-- <li><a href="/pedidos"> Pedidos</a></li> -->
+          <!-- <li class="divider"></li> -->
+          <!-- <li><a href="#">Separated link</a></li> -->
+          <!-- <li class="divider"></li> -->
+          <!-- <li><a href="#">Informes</a></li> -->
+        </ul>
+      </li>
+        <li>
+          <a href="/custos"><i class="fa fa-home"> Custos </i></a>
+        </li>
+        <!-- <li>
+          <a href="/mercado"><i class="fa fa-home"> Mercado </i></a>
+        </li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-files-o"> </i> Mercado <i class="fa fa-caret-down"></i> </a>
+
+        <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mercado <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a> -->
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="/clientes"> Clients</a></li>
+          <li><a href="/produtos"> Produtos</a></li>
+          <li><a href="/pedidos"> Pedidos</a></li>
+
+        </ul>
+      </li>
+
+
+        <li>
+          <a href="/servicos"><i class="fa fa-home"> Serviços </i></a>
+        </li>
+        <li>
+          <a href="/crm"><i class="fa fa-home"> CRM </i></a>
+        </li>
+        <li>
+          <a href="/pessoas"><i class="fa fa-home"> Pessoas </i></a>
+        </li>
+    </ul>
+    <!-- Sidebar divider -->
+    <!-- <div class="sidebar-divider"></div> -->
+
+    <!-- Sidebar text -->
+    <!--  <div class="sidebar-text">Text</div> -->
+</aside>
+
+
 </template>

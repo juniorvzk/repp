@@ -1,0 +1,25 @@
+{
+  "name": "repp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "routes.js",
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "moment": "^2.19.2",
+    "simpl-schema": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leveluptuts/Blaze-Base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leveluptuts/Blaze-Base/issues"
+  },
+  "homepage": "https://github.com/leveluptuts/Blaze-Base#readme"
+}
