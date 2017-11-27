@@ -1,10 +1,11 @@
 // import { EJSON } from 'meteor/ejson'
 
 
-const selectedProducts = new Mongo.Collection(null);
+const selectedProducts = new Mongo.Collection();
 
 Template.emitirTemplate.onCreated(function () {
   Session.set("clientNota", null);
+  console.log("remove");
   selectedProducts.remove({});
 
 
@@ -15,6 +16,7 @@ Template.emitirTemplate.onCreated(function () {
 
 Template.emitirTemplate.helpers({
   getTotal: function() {
+    console.log("olá getTotal");
     var total = selectedProducts.find({}).sum('subtotal');
     return "R$"+String(total.toFixed(2));
 
@@ -41,6 +43,7 @@ Template.emitirTemplate.events({
 
     var cliente = Session.get("clientNota");
     var transportador = Session.get("transportadorNota");
+    console.log("olá sabeNFE");
     var produtos = selectedProducts.find().fetch();
 
     console.log("\n\n-- -- -- -- -- -- Emitindo nota -- -- -- -- -- -- ");
@@ -204,6 +207,7 @@ Template.emitirTemplate.events({
 
   }
 });
+
 
 
 Template.findClient.helpers({
@@ -391,7 +395,7 @@ Template.findProduct.helpers({
 
 Template.showSelectecProducts.helpers({
   getSelectedProducts: function() {
-
+    console.log("olá Prod");
     return selectedProducts.find({});
 
     // Session.set("productsNota",undefined);
@@ -479,7 +483,7 @@ Template.showSelectecProducts.events({
 Template.findProduct.events({
 
   'click .reactive-table tbody tr': function(event) {
-    Session.set("currentProduct",this);
+    // Session.set("currentProduct",this);
   },
 
   'dblclick .reactive-table tbody tr': function(event) {
@@ -497,6 +501,7 @@ Template.findProduct.events({
       // findProd.quantidade=qnt+1;
       prod.subtotal = parseFloat((prod.valor*prod.quantidade).toPrecision(3));
 
+      console.log("há");
       selectedProducts.update({_id:findProd._id}, {$set:{
         quantidade: prod.quantidade,
         subtotal : prod.subtotal
@@ -508,6 +513,7 @@ Template.findProduct.events({
 
       prod.quantidade=1;
       prod.subtotal = parseFloat((prod.valor*prod.quantidade).toPrecision(3));
+      console.log("oie");
       selectedProducts.insert(prod);
 
 
@@ -604,13 +610,16 @@ Template.qntProduto.events({
         prod.quantidade = parseInt(inputValue);
         prod.subtotal = parseFloat((prod.valor*prod.quantidade).toPrecision(3));
 
-        // console.log("prod after: ", prod);
+        console.log("prod after: ", prod);
+        console.log(selectedProducts.find({}).fetch());
+        var ins = selectedProducts.insert(prod);
+        console.log(ins);
 
-        selectedProducts.insert(prod);
-
+        console.log("oi");
 
         }
 
+        console.log("oi2");
       // var newQtd = parseFloat(inputValue).toPrecision(3);
 
       console.log("produttooooo00000-----",selectedProducts.findOne({_id:prod._id}));
@@ -678,7 +687,7 @@ Template.qntProduto.helpers({
 
 
   getQuantidade: function(){
-    // console.log("\nprod qnt -- ",this);
+    console.log("\nprod qnt -- ",this);
     // var row = this;
     var findProd = selectedProducts.findOne({_id:this._id});
 
