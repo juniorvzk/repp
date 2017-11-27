@@ -59,3 +59,20 @@ Pedidos.allow({
     return true;
   }
 });
+
+Meteor.publish('tributos', function(){
+  return Tributos.find();
+});
+
+
+Tributos.allow({
+  insert: function(){
+    return true;
+  },
+  update: function(){
+    return true;
+  },
+  remove: function(){
+    return true;
+  }
+});

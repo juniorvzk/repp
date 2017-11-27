@@ -1,9 +1,13 @@
 if(Meteor.isClient){
-  Accounts.onLogin(function () {
+  if (Meteor.loggingIn()) {
+    if (Meteor.user()) {
+      Router.go("/dashboard");
+    }
+
+  }
 
     // Router.go('/dashboard');
 
-  });
 }
 
 
