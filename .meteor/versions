@@ -78,6 +78,7 @@ fortawesome:fontawesome@4.7.0
 forwarder:autoform-wizard@0.9.1
 fourseven:scss@4.5.4
 geojson-utils@1.0.10
+gliese:materialize-xl-screen@0.2.0
 google-config-ui@1.0.0
 hitchcott:qr-scanner@1.0.4
 hot-code-push@1.0.4
