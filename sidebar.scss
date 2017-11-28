@@ -156,7 +156,9 @@ body {
   position: relative;
   display: block;
   min-height: 100%;
-  overflow-y: auto;
+  width: auto;
+  width: 10px;
+  // overflow-y: auto;
   overflow-x: hidden;
   border: none;
   -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
@@ -773,7 +775,7 @@ body {
 }
 .sidebar.open {
   min-width: 280px;
-  width: 280px;
+  width: 100%;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
