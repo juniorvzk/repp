@@ -774,7 +774,7 @@ body {
   transform: translate3d(-280px, 0, 0);
 }
 .sidebar.open {
-  min-width: 280px;
+  // min-width: 280px;
   width: 100%;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
